@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productor Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+  <header>
+    <h1>🎬 Productor Task Manager</h1>
+    <p>Organiza tus proyectos, prioridades y deadlines</p>
+  </header>
+
+  <!-- Formulario para nueva tarea -->
+  <div class="task-form">
+    <div class="form-row">
+      <input type="text" id="taskTitle" placeholder="Título de la tarea (ej. Mezclar pista vocal)" autocomplete="off">
+      <input type="text" id="taskProject" placeholder="Proyecto / Cliente" autocomplete="off">
+    </div>
+    <div class="form-row">
+      <select id="taskPriority">
+        <option value="media">Prioridad Media</option>
+        <option value="alta">🔴 Alta</option>
+        <option value="media">🟡 Media</option>
+        <option value="baja">🟢 Baja</option>
+      </select>
+      <input type="date" id="taskDueDate">
+      <select id="taskStatus">
+        <option value="pendiente">⏳ Pendiente</option>
+        <option value="progreso">⚙️ En progreso</option>
+        <option value="completada">✅ Completada</option>
+      </select>
+    </div>
+    <button id="addTaskBtn">➕ Agregar tarea</button>
+  </div>
+
+  <!-- Filtros rápidos -->
+  <div class="filters">
+    <span>Filtrar por estado:</span>
+    <button class="filter-btn active" data-filter="all">Todas</button>
+    <button class="filter-btn" data-filter="pendiente">Pendiente</button>
+    <button class="filter-btn" data-filter="progreso">En progreso</button>
+    <button class="filter-btn" data-filter="completada">Completada</button>
+    <button id="clearCompletedBtn" class="clear-completed">🗑️ Limpiar completadas</button>
+  </div>
+
+  <!-- Lista de tareas -->
+  <div class="tasks-container">
+    <ul id="taskList" class="task-list">
+      <li class="empty-message">📭 No hay tareas. Agrega una nueva.</li>
+    </ul>
+  </div>
+  <footer>
+    💾 Guardado automático · Haz clic en el título para editar rápido (próximamente)
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
